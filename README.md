@@ -1,8 +1,8 @@
 # yay-installer
 
-## Usage
+Easily install [yay](https://github.com/Jguer/yay) from the AUR when you have no other AUR helper installed.
 
-Add this to your installation scripts to install yay from the AUR:
+Simply run:
 ```
 bash -c "$(curl https://raw.githubusercontent.com/cjbassi/yay-installer/master/yay-installer.sh)"
 ```
