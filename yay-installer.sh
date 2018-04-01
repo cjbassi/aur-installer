@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 # Make sure our shiny new arch is up-to-date
-echo "Checking for system updates..."
-sudo pacman -Syu
+#echo "Checking for system updates..."
+#sudo pacman -Syu
 
 # Create a tmp-working-dir and navigate into it
 mkdir -p /tmp/yay_install
