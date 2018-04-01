@@ -8,7 +8,7 @@ cd /tmp/yay_install
 sudo pacman -Sy --noconfirm --needed binutils make gcc fakeroot pkg-config
 
 # Install 'yay' from the AUR
-if [[ ! -n "$(pacman -Qs yay)" ]]; then
+if [[ $(pacman -Qs yay) == "" ]]; then
     curl https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=yay > PKGBUILD
     makepkg -si --needed --noconfirm
 fi
