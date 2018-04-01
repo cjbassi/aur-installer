@@ -11,6 +11,7 @@ cd /tmp/yay_install
 # # If you didn't install the "base-devel" group,
 # # we'll need those.
 # sudo pacman -S binutils make gcc fakeroot pkg-config --noconfirm --needed
+sudo pacman -S --noconfirm --needed make
 
 # # Install yay dependencies from arch repos
 # sudo pacman -S expac yajl git --noconfirm --needed
