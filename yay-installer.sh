@@ -1,17 +1,11 @@
 #!/usr/bin/env bash
 
-# Make sure our shiny new arch is up-to-date
-#echo "Checking for system updates..."
-#sudo pacman -Syu
-
 # Create a tmp-working-dir and navigate into it
 mkdir -p /tmp/yay_install
 cd /tmp/yay_install
 
-# # If you didn't install the "base-devel" group,
-# # we'll need those.
-# sudo pacman -S binutils make gcc fakeroot pkg-config --noconfirm --needed
-sudo pacman -S --noconfirm --needed make
+# Install build dependencies if the "base-devel" group isn't installed
+sudo pacman -Sy --noconfirm --needed binutils make gcc fakeroot pkg-config
 
 # # Install yay dependencies from arch repos
 # sudo pacman -S expac yajl git --noconfirm --needed
