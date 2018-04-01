@@ -16,9 +16,9 @@ cd /tmp/yay_install
 # sudo pacman -S expac yajl git --noconfirm --needed
 
 # Install "yay" from AUR
-if [ ! -n "$(pacman -Qs yay)" ]; then
-    curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=yay
-    makepkg PKGBUILD --install --needed --noconfirm
+if [[ ! -n "$(pacman -Qs yay)" ]]; then
+    curl https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=yay > PKGBUILD
+    makepkg -si --needed --noconfirm
 fi
 
 # Clean up...
