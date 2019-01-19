@@ -7,9 +7,22 @@ cd /tmp/yay_install
 # Install build dependencies if the 'base-devel' group isn't installed
 sudo pacman -Sy --noconfirm --needed binutils make gcc fakeroot pkg-config
 
-# Install 'yay' from the AUR
+# Select correct yay package
+case "$@" in
+    "git")
+        package="yay-git"
+        ;;
+    "bin")
+        package="yay-bin"
+        ;;
+    *)
+        package="yay"
+        ;;
+esac
+
+# Download and make PKGBUILD
 if [[ $(pacman -Qs yay) == "" ]]; then
-    curl https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=yay > PKGBUILD
+    curl https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=${package} > PKGBUILD
     makepkg -si --needed --noconfirm
 fi
 
