@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+dir=$(mktemp -d)
+cd $dir
+
+# Install build dependencies if the 'base-devel' group isn't installed
+sudo pacman -Sy --noconfirm --needed binutils make gcc fakeroot pkg-config
+
+curl https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h="$@" > PKGBUILD
+makepkg -si --needed --noconfirm
+
+rm -rf $dir
